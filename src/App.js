@@ -4,24 +4,27 @@ import About from "./components/About";
 import Dashboard from "./components/Dashboard";
 import Navbar from "./components/Navbar";
 import Todo from "./components/Todo";
+import TodoContextProvider from "./contexts/TodoContext";
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Navbar></Navbar>
-        <Switch>
-          <Route path="/" exact>
-            <Dashboard></Dashboard>
-          </Route>
-          <Route path="/todo">
-            <Todo></Todo>
-          </Route>
-          <Route path="/about">
-            <About></About>
-          </Route>
-        </Switch>
-      </Router>
+      <TodoContextProvider>
+        <Router>
+          <Navbar></Navbar>
+          <Switch>
+            <Route path="/" exact>
+              <Dashboard></Dashboard>
+            </Route>
+            <Route path="/todo">
+              <Todo></Todo>
+            </Route>
+            <Route path="/about">
+              <About></About>
+            </Route>
+          </Switch>
+        </Router>
+      </TodoContextProvider>
     </div>
   );
 }
