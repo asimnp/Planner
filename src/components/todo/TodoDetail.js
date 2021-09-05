@@ -8,7 +8,7 @@ const TodoDetail = ({ todo }) => {
       {todo.is_completed ? (
         ""
       ) : (
-        <li onClick={dispatch({ type: "TODO_COMPLETE", id: todo.id })}>
+        <li onClick={() => dispatch({ type: "TODO_COMPLETE", id: todo.id })}>
           <div>{todo.title}</div>
         </li>
       )}
