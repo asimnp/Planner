@@ -5,7 +5,7 @@ export const TodoReducer = (state, action) => {
         ...state,
         {
           id: Math.random(),
-          title: action.book.title,
+          title: action.todo.title,
           is_completed: false,
         },
       ];
